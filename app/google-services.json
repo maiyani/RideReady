@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "855197187716",
+    "project_id": "rideready-fc03c",
+    "storage_bucket": "rideready-fc03c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:855197187716:android:ce43c293dcfe270fabccd1",
+        "android_client_info": {
+          "package_name": "com.example.rideready"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpCTnxExHoeaEcP9axZAMT8Tz8uLehXEQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
