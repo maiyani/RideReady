@@ -54,15 +54,15 @@ fun LoginScreen(navController: NavController){
 
 
 
-        Spacer(modifier = Modifier.height(10.dp))
+        Spacer(modifier = Modifier.height(100.dp))
 
         Text(
             text = "Welcome Back",
-            fontSize = 40.sp,
+            fontSize = 36.sp,
             fontWeight = FontWeight.Bold,
             fontFamily = FontFamily.Cursive
         )
-        Spacer(modifier = Modifier.height(10.dp))
+        Spacer(modifier = Modifier.height(30.dp))
 
 
 
@@ -81,7 +81,7 @@ fun LoginScreen(navController: NavController){
             shape = RoundedCornerShape(5.dp)
         )
 
-        Spacer(modifier = Modifier.height(10.dp))
+        Spacer(modifier = Modifier.height(30.dp))
 
         var passwordVisible by remember { mutableStateOf(false) }
         // Function to determine visual transformation based on visibility
@@ -119,7 +119,7 @@ fun LoginScreen(navController: NavController){
 
         )
 
-        Spacer(modifier = Modifier.height(10.dp))
+        Spacer(modifier = Modifier.height(30.dp))
         val context = LocalContext.current
         val authViewModel = AuthViewModel(navController, context)
 
@@ -132,7 +132,7 @@ fun LoginScreen(navController: NavController){
             ) {
                 Text(text = "SignIn", fontFamily = FontFamily.SansSerif)
             }
-            Spacer(modifier = Modifier.width(10.dp))
+            Spacer(modifier = Modifier.width(30.dp))
 
             Button(
                 onClick = { authViewModel.adminlogin(email, password) },
@@ -144,6 +144,7 @@ fun LoginScreen(navController: NavController){
 
         }
 
+        Spacer(modifier = Modifier.width(30.dp))
 
 
         Button(

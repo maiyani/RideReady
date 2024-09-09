@@ -70,9 +70,9 @@ fun SignupScreen(navController: NavController){
 
         Text(
             text = "Welcome Back",
-            fontSize = 60.sp,
+            fontSize = 55.sp,
             fontFamily = FontFamily.Cursive,
-            color = Color.Magenta
+            color = Color.Black
         )
 
         Spacer(modifier = Modifier.height(10.dp))
@@ -141,14 +141,14 @@ fun SignupScreen(navController: NavController){
         val context = LocalContext.current
         val authViewModel = AuthViewModel(navController, context)
 
-        Button(onClick = {
+        Button(onClick = {navController.navigate(ROUT_LOGIN)
             authViewModel.signup(name, email, password,confpassword)
          },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 30.dp, end = 30.dp)
                 .height(50.dp),
-            colors = ButtonDefaults.buttonColors(Color.Magenta),
+            colors = ButtonDefaults.buttonColors(Color.Black),
             shape = RoundedCornerShape(10.dp)
 
         )
@@ -165,7 +165,7 @@ fun SignupScreen(navController: NavController){
                 .fillMaxWidth()
                 .padding(start = 30.dp, end = 30.dp)
                 .height(50.dp),
-            colors = ButtonDefaults.buttonColors(Color.Magenta),
+            colors = ButtonDefaults.buttonColors(Color.Black),
             shape = RoundedCornerShape(10.dp)
 
         )

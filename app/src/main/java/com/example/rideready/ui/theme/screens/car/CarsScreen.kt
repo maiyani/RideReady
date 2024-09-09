@@ -206,6 +206,85 @@ fun CarScreen(navController: NavController){
         }
 
 
+        Spacer(modifier = Modifier.height(20.dp))
+
+        Row(
+            modifier = Modifier
+                .padding(start = 20.dp,)
+                .horizontalScroll(rememberScrollState())
+        ) {
+            //CARD ONE
+
+            Card(modifier = Modifier
+                .height(180.dp)
+                .width(200.dp)) {
+                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                    Image(
+                        painter = painterResource(id = R.drawable.img),
+                        contentDescription = "home",
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
+                    )
+                }
+            }
+            //CARD END
+            Spacer(modifier = Modifier.width(20.dp))
+
+            //CARD TWO
+
+            Card(modifier = Modifier
+                .height(180.dp)
+                .width(200.dp)) {
+                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                    Image(
+                        painter = painterResource(id = R.drawable.img),
+                        contentDescription = "home",
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
+                    )
+                }
+            }
+            //CARD END TWO
+            Spacer(modifier = Modifier.width(20.dp))
+
+            //CARD THREE
+
+            Card(modifier = Modifier
+                .height(180.dp)
+                .width(200.dp)) {
+                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                    Image(
+                        painter = painterResource(id = R.drawable.img),
+                        contentDescription = "home",
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
+                    )
+                }
+            }
+            //CARD END THREE
+            Spacer(modifier = Modifier.width(20.dp))
+
+            //CARD FOUR
+
+            Card(modifier = Modifier
+                .height(180.dp)
+                .width(200.dp)) {
+                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                    Image(
+                        painter = painterResource(id = R.drawable.img),
+                        contentDescription = "home",
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
+                    )
+                }
+            }
+            //CARD END FOUR
+
+
+
+        }
+
+
 
 
 

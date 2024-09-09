@@ -22,6 +22,10 @@ import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.example.rideready.navigation.ROUT_LOGIN
 import com.example.rideready.R
+import com.example.rideready.navigation.ADD_ACCOUNT
+import com.example.rideready.navigation.ROUT_HOME
+import com.example.rideready.navigation.VIEW_ACCOUNT
+import com.example.rideready.navigation.VIEW_CARS_URL
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

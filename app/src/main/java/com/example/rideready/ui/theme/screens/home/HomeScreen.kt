@@ -13,12 +13,16 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Card
 import androidx.compose.material3.DrawerValue
@@ -51,8 +55,12 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.rideready.R
+import com.example.rideready.navigation.ROUT_BMW
 import com.example.rideready.navigation.ROUT_CAR
+import com.example.rideready.navigation.ROUT_MERCEDES
+import com.example.rideready.navigation.ROUT_ROLLSROYCE
 import kotlinx.coroutines.launch
+import androidx.compose.material3.IconButton as IconButton1
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
@@ -100,14 +108,31 @@ fun HomeScreen(navController:NavController){
 
                 TopAppBar(title = { Text(text = "Homepage") },
                     navigationIcon = {
-                        IconButton(onClick = {
+                        IconButton1(onClick = {
                             scope.launch {
                                 drawerState.open()
                             }
                         }) {
                             Icon(Icons.Filled.Menu, contentDescription = "")
                         }
-                    })
+
+
+                        IconButton(onClick = {  }) {
+                                Icon(imageVector = Icons.Default.ArrowBack, contentDescription = "menu", tint = Color.Black)
+                            }
+
+
+
+
+
+                    },
+
+
+
+
+
+                )
+
 
             }
         ) {
@@ -116,14 +141,15 @@ fun HomeScreen(navController:NavController){
             //Main Content of the screen
 
             Column (modifier = Modifier
+                .verticalScroll(rememberScrollState())
                 .fillMaxSize()
                 .padding(top = 100.dp),
                 horizontalAlignment = Alignment.CenterHorizontally){
 
-                Text(text = "This is current page", fontSize = 20.sp)
+                Text(text = "This is the home page", fontSize = 20.sp)
 
                 Text(
-                    text = "EstatePlus payment platform",
+                    text = "RideReady",
                     fontSize = 20.sp
                 )
 
@@ -133,9 +159,13 @@ fun HomeScreen(navController:NavController){
                 Spacer(modifier = Modifier.height(10.dp))
 
 
-                Card (modifier = Modifier.fillMaxWidth().padding(start = 10.dp, end = 10.dp).height(200.dp)
-                    .clickable {navController.navigate(ROUT_CAR)
-                },
+                Card (modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 10.dp, end = 10.dp)
+                    .height(200.dp)
+                    .clickable {
+                        navController.navigate(ROUT_CAR)
+                    },
 
                 ){
                     Box(modifier = Modifier
@@ -164,19 +194,93 @@ fun HomeScreen(navController:NavController){
                 Spacer(modifier = Modifier.height(10.dp))
 
 
-                Card (modifier = Modifier.fillMaxWidth().padding(start = 10.dp, end = 10.dp).height(200.dp)){
+                Card (modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 10.dp, end = 10.dp)
+                    .height(200.dp)
+                    .clickable {
+                        navController.navigate(ROUT_MERCEDES)
+                    },){
                     Box(modifier = Modifier
                         .fillMaxWidth()
                         .height(280.dp),
                         contentAlignment = Alignment.Center){
 
-                        Image(painter = painterResource(id = R.drawable.img),
+                        Image(painter = painterResource(id = R.drawable.mercedes),
                             contentDescription ="home",
                             modifier = Modifier.fillMaxSize(),
                             contentScale = ContentScale.Crop
                         )
                         Text(
                             text = "Mercerdes",
+                            fontSize = 40.sp,
+                            color = Color.White,
+                            fontWeight = FontWeight.ExtraBold,
+                            textAlign = TextAlign.Center
+
+                        )
+                    }
+
+                }
+
+
+                Spacer(modifier = Modifier.height(10.dp))
+
+
+                Card (modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 10.dp, end = 10.dp)
+                    .height(200.dp)
+                    .clickable {
+                        navController.navigate(ROUT_ROLLSROYCE)
+                    },){
+                    Box(modifier = Modifier
+                        .fillMaxWidth()
+                        .height(280.dp),
+                        contentAlignment = Alignment.Center){
+
+                        Image(painter = painterResource(id = R.drawable.royce),
+                            contentDescription ="home",
+                            modifier = Modifier.fillMaxSize(),
+                            contentScale = ContentScale.Crop
+                        )
+                        Text(
+                            text = "Rolls Royce",
+                            fontSize = 40.sp,
+                            color = Color.White,
+                            fontWeight = FontWeight.ExtraBold,
+                            textAlign = TextAlign.Center
+
+                        )
+                    }
+
+                }
+
+
+
+
+                Spacer(modifier = Modifier.height(10.dp))
+
+
+                Card (modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 10.dp, end = 10.dp)
+                    .height(200.dp)
+                    .clickable {
+                        navController.navigate(ROUT_BMW)
+                    },){
+                    Box(modifier = Modifier
+                        .fillMaxWidth()
+                        .height(280.dp),
+                        contentAlignment = Alignment.Center){
+
+                        Image(painter = painterResource(id = R.drawable.bmw),
+                            contentDescription ="home",
+                            modifier = Modifier.fillMaxSize(),
+                            contentScale = ContentScale.Crop
+                        )
+                        Text(
+                            text = "BMW",
                             fontSize = 40.sp,
                             color = Color.White,
                             fontWeight = FontWeight.ExtraBold,
@@ -195,6 +299,16 @@ fun HomeScreen(navController:NavController){
             }
 
             //End of main contents
+            Spacer(modifier = Modifier.height(20.dp))
+
+            Text(
+                text = "ABOUT US",
+                fontSize = 40.sp,
+                color = Color.White,
+                fontWeight = FontWeight.ExtraBold,
+                textAlign = TextAlign.Center
+
+            )
 
         }
 

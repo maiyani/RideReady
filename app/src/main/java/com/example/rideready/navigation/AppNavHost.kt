@@ -6,6 +6,11 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.rideready.ui.theme.screens.about.AboutScreen
+import com.example.rideready.ui.theme.screens.account.AddAccountScreen
+import com.example.rideready.ui.theme.screens.account.ViewAccountScreen
+import com.example.rideready.ui.theme.screens.bmw.BmwScreen
+import com.example.rideready.ui.theme.screens.bugatti.BugattiScreen
 import com.example.rideready.ui.theme.screens.car.CarScreen
 import com.example.rideready.ui.theme.screens.cars.AddCarScreen
 import com.example.rideready.ui.theme.screens.cars.ViewCarScreen
@@ -13,6 +18,8 @@ import com.example.rideready.ui.theme.screens.cars.ViewCarsScreen
 import com.example.rideready.ui.theme.screens.checkout.CheckOutScreen
 import com.example.rideready.ui.theme.screens.home.HomeScreen
 import com.example.rideready.ui.theme.screens.login.LoginScreen
+import com.example.rideready.ui.theme.screens.mercedes.MercedesScreen
+import com.example.rideready.ui.theme.screens.rollsroyce.RollsRoyceScreen
 import com.example.rideready.ui.theme.screens.signup.SignupScreen
 import com.example.rideready.ui.theme.screens.splash.SplashScreen
 
@@ -31,6 +38,10 @@ fun AppNavHost(
 
         composable(ROUT_HOME) {
             HomeScreen(navController = navController)
+        }
+
+        composable(ROUT_ABOUT) {
+            AboutScreen(navController = navController)
         }
 
 
@@ -65,6 +76,30 @@ fun AppNavHost(
 
         composable(ROUT_CAR) {
             CarScreen(navController= navController)
+        }
+
+        composable(ROUT_BMW) {
+            BmwScreen(navController= navController)
+        }
+
+        composable(ROUT_BUGATTI) {
+            BugattiScreen(navController= navController)
+        }
+
+        composable(ROUT_MERCEDES) {
+            MercedesScreen(navController= navController)
+        }
+
+        composable(ROUT_ROLLSROYCE) {
+            RollsRoyceScreen(navController= navController)
+        }
+
+
+        composable(ADD_ACCOUNT){
+            AddAccountScreen(navController = navController)
+        }
+        composable(VIEW_ACCOUNT){
+            ViewAccountScreen(navController = navController)
         }
 
 
